@@ -1,0 +1,70 @@
+var SohoExamle = {
+    Message: {
+        add: function (message, type, friend_headPortrait,friend_name,time,isSend) {
+            var chat_body = $('.layout .content .chat .chat-body');
+            if (chat_body.length > 0) {
+
+                type = type ? type : '';
+                message = message ? message : '[未知信息]';
+
+                $('.layout .content .chat .chat-body .messages').append(`<div class="message-item ` + type + `" style="position: relative;overflow: hidden;">
+                        <div class="message-avatar">
+                            <figure class="avatar">
+                                <img src="` + friend_headPortrait + `" class="rounded-circle">
+                            </figure>
+                            <div>
+                                <h5>` + friend_name + `</h5>
+                                <div class="time">`+time+`</div>
+                            </div>
+                        </div>
+                        <div class="message-content">
+                            ` + message + `
+                        </div>`
+                    +(type == 'outgoing-message' ? (isSend==1 ? '<i class="ti-double-check text-info" style="position:  absolute;right:  0;margin-right: 4px;margin-top: -18px;color: #00ffb4 !important;"></i>': '<i class="ti-check " style="position:  absolute;right:  0;margin-right: 14px;margin-top: -18px;color: #00ffb4 !important;"></i><i class="ti-check text-light" style="position:  absolute;right:  0;margin-right: 4px;margin-top: -18px;"></i>') : '')  +
+                    `</div>`);
+
+                setTimeout(function () {
+                    chat_body.scrollTop(chat_body.get(0).scrollHeight, -1).niceScroll({
+                        cursorcolor: 'rgba(66, 66, 66, 0.20)',
+                        cursorwidth: "4px",
+                        cursorborder: '0px'
+                    }).resize();
+                }, 200);
+            }
+        }
+    },
+    Image: {
+        add: function (message, type, friend_headPortrait,friend_name,time,isSend) {
+            var chat_body = $('.layout .content .chat .chat-body');
+            if (chat_body.length > 0) {
+
+                type = type ? type : '';
+                message = message ? message : '[未知信息]';
+
+                $('.layout .content .chat .chat-body .messages').append(`<div class="message-item ` + type + `" style="position: relative;overflow: hidden;">
+                        <div class="message-avatar">
+                            <figure class="avatar">
+                                <img src="` + friend_headPortrait + `" class="rounded-circle">
+                            </figure>
+                            <div>
+                                <h5>` + friend_name + `</h5>
+                                <div class="time">`+time+`</div>
+                            </div>
+                        </div>
+                        <figure>\
+                            <img src="` + message + `" class="w-25 img-fluid rounded" alt="image">\
+                        </figure>`
+                    +(type == 'outgoing-message' ? (isSend==1 ? '<i class="ti-double-check text-info" style="position:  absolute;right:  0;margin-right: 4px;margin-top: -18px;color: #00ffb4 !important;"></i>': '<i class="ti-check " style="position:  absolute;right:  0;margin-right: 14px;margin-top: -18px;color: #00ffb4 !important;"></i><i class="ti-check text-light" style="position:  absolute;right:  0;margin-right: 4px;margin-top: -18px;"></i>') : '')  +
+                    `</div>`);
+
+                setTimeout(function () {
+                    chat_body.scrollTop(chat_body.get(0).scrollHeight, -1).niceScroll({
+                        cursorcolor: 'rgba(66, 66, 66, 0.20)',
+                        cursorwidth: "4px",
+                        cursorborder: '0px'
+                    }).resize();
+                }, 200);
+            }
+        }
+    }
+};

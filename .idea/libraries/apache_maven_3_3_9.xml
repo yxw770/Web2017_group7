@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="apache-maven-3.3.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/apache-maven-3.3.9.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
